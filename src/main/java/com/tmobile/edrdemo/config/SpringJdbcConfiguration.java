@@ -15,7 +15,7 @@ public class SpringJdbcConfiguration {
 
 	@Autowired
 	private Environment env;
-	
+	/**
 	@Bean(name="onedatajdbcDS")
 	public DataSource getOneDataDataSource()	{
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -23,6 +23,16 @@ public class SpringJdbcConfiguration {
         dataSource.setUrl("jdbc:oracle:thin:@gbl-poned1.unix.gsm1900.org:7663:ponedp2");
         dataSource.setUsername("\"3t0_nppi_ats\"");
         dataSource.setPassword("\"3T0_nPPi_ats23#\"");
+		return dataSource;
+	}
+	*/
+	@Bean(name="hssjdbcDS")
+	public DataSource getHSSDataSource()	{
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        dataSource.setUrl("jdbc:sqlserver://qtmnpeexplrdbwu2sql0.database.windows.net;databaseName=reportingdb");
+        dataSource.setUsername("svc_reportingdb");
+        dataSource.setPassword("TmoNEdSprintntm!6#$1");
 		return dataSource;
 	}
 }

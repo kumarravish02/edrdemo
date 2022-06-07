@@ -5,24 +5,24 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.tmobile.edrdemo.domain.ColumnNames;
-import com.tmobile.edrdemo.service.ColumnNamesService;
+import com.tmobile.edrdemo.domain.Product;
+import com.tmobile.edrdemo.service.ProductService;
 
 @RestController
 public class MainController {
+
 	@Autowired
-	private ColumnNamesService columnNamesService;
-	
+	private ProductService productService;
+	/**
 	@GetMapping("/columnNames/{tableName}")
 	public List<ColumnNames> findByTableName(@PathVariable String tableName)	{
 		return columnNamesService.findByTableName(tableName);
 	}
-	
+	*/
 	private String message = "Hello World";
 
 	@GetMapping("/hello")
@@ -30,6 +30,13 @@ public class MainController {
 		ModelAndView model = new ModelAndView("welcome");
 		model.addObject("message", this.message);
 		return model;
+	}
+	
+	
+	
+	@GetMapping("/products")
+	public List<Product> findAllProducts() {
+		return productService.findAll();
 	}
 	
 	@GetMapping("/yellow")
@@ -50,10 +57,5 @@ public class MainController {
 	//	model.addObject("sitelist", Arrays.asList(results));
         return model;
 	}
-	@GetMapping("/columns/{tableName}")
-	public ModelAndView findViewByTableName(@PathVariable String tableName)	{
-		ModelAndView model = new ModelAndView("columnnames");
-		model.addObject("columnnames", columnNamesService.findByTableName(tableName));
-		return model;
-	}
+
 }
