@@ -28,11 +28,19 @@ public class SpringJdbcConfiguration {
 	*/
 	@Bean(name="hssjdbcDS")
 	public DataSource getHSSDataSource()	{
+		
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setDriverClassName(env.getProperty("spring.sqlserver.datasource.driver-class-name"));
+	    dataSource.setUrl(env.getProperty("spring.hss.datasource.jdbc-url"));
+	    dataSource.setUsername(env.getProperty("spring.hss.datasource.username"));
+	    dataSource.setPassword(env.getProperty("spring.hss.datasource.password"));
+	    /**
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         dataSource.setUrl("jdbc:sqlserver://qtmnpeexplrdbwu2sql0.database.windows.net;databaseName=reportingdb");
         dataSource.setUsername("svc_reportingdb");
         dataSource.setPassword("TmoNEdSprintntm!6#$1");
+        */
 		return dataSource;
 	}
 }
