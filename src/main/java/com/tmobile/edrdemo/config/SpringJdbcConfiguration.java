@@ -15,7 +15,7 @@ public class SpringJdbcConfiguration {
 
 	@Autowired
 	private Environment env;
-	/**
+	
 	@Bean(name="onedatajdbcDS")
 	public DataSource getOneDataDataSource()	{
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -25,7 +25,7 @@ public class SpringJdbcConfiguration {
         dataSource.setPassword("\"3T0_nPPi_ats23#\"");
 		return dataSource;
 	}
-	*/
+	
 	@Bean(name="hssjdbcDS")
 	public DataSource getHSSDataSource()	{
 		
