@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class EdrdemoApplication extends SpringBootServletInitializer {
+public class EdrdemoApplication /* extends SpringBootServletInitializer */ {
 
 	@GetMapping("/message")
 	public String message()	{
@@ -19,8 +19,9 @@ public class EdrdemoApplication extends SpringBootServletInitializer {
 		SpringApplication.run(EdrdemoApplication.class, args);
 	}
 
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		return builder.sources(EdrdemoApplication.class);
-	}
+	/*
+	 * @Override protected SpringApplicationBuilder
+	 * configure(SpringApplicationBuilder builder) { return
+	 * builder.sources(EdrdemoApplication.class); }
+	 */
 }

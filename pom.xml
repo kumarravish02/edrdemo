@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>edrdemo</name>
 	<description>Demo project for Spring Boot</description>
-	<packaging>war</packaging>
+	<!-- <packaging>war</packaging> -->
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -30,10 +30,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
     		<groupId>org.springframework.boot</groupId>
     		<artifactId>spring-boot-starter-tomcat</artifactId>
-		</dependency>
+		</dependency> -->
 		<dependency>
     		<groupId>log4j</groupId>
     		<artifactId>log4j</artifactId>
